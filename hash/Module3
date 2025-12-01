@@ -1,0 +1,25 @@
+// XOR related problems or concepts 
+
+//truth Table - 
+/*A              B                A^B
+0              0                 0
+1              1                 0
+0              1                 1  
+1              0                 1
+*/
+
+
+/*If number appears twice in xor chain toh cancel ho jata hai wo
+example -*/
+
+//2 ^ 1 ^ 4 ^ 1 ^ 2 = 4
+
+//First Problem -
+//Single Number 
+
+// int XOR = 0;
+// for(int x :nums){
+     // XOR = XOR ^ x;
+//}
+// return XOR;
+
