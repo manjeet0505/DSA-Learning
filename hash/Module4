@@ -51,4 +51,37 @@ public boolean containsDuplicate(int[] nums) {
         return false;
     }
 
+
+
+
+    Next Problem (Module–4) → “Intersection of Two Arrays
+
+    public int[] intersection(int[] nums1, int[] nums2) {
+        Set<Integer> hash = new HashSet<>();
+        Set<Integer> ans = new HashSet<>();
+        for(int x: nums1){
+            hash.add(x);
+        }
+        for(int x:nums2){
+            if(hash.contains(x)){
+                ans.add(x);
+            }
+        }
+        return ans.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    Problem 4 - Union of two arrays.
+
+    public static ArrayList<Integer> findUnion(int[] a, int[] b) {
+        Set<Integer> hash = new HashSet<>();
+        for(int x:a){
+            hash.add(x);
+        }
+        for(int x:b){
+            hash.add(x);
+        }
+         return new ArrayList<>(hash);
+    }
+
+    In this problem learn the way to return set in arraylist.
 */
