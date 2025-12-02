@@ -1,0 +1,33 @@
+/*
+Set-Based Hashing
+
+Problem 1 – Longest Consecutive Sequence
+
+Given an integer array nums, find the length of the longest sequence of consecutive numbers.
+Sequence must be made of numbers that appear anywhere in the array (not necessarily contiguous).
+
+
+
+
+    public int longestConsecutive(int[] nums) {
+        Set<Integer> hash = new HashSet<>();
+        int maxlen = 0;
+        for(int x:nums){
+            hash.add(x);
+        }
+        for(int x : hash){
+            if(!hash.contains(x-1)){
+                int curr = x;
+                int len = 1;
+                while(hash.contains(curr + 1)){
+                    curr++;
+                    len++;
+                }
+                maxlen = Math.max(maxlen,len);
+            }
+        }
+        return maxlen;
+    }
+
+
+*/
