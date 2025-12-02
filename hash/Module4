@@ -30,4 +30,25 @@ Sequence must be made of numbers that appear anywhere in the array (not necessar
     }
 
 
+
+
+    Problem 2 — Check if Array Has Unique Elements (Using HashSet)
+
+    Given an array, check if all elements are unique or not.
+Agar koi element repeat hota mil jaye → return false
+Agar sab unique → return true
+
+
+public boolean containsDuplicate(int[] nums) {
+        HashSet<Integer> result = new HashSet<>();
+        for(int x: nums){
+           
+            if(result.contains(x)){
+                return true;
+            }
+             result.add(x);
+        }
+        return false;
+    }
+
 */
