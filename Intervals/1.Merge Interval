@@ -79,5 +79,48 @@ and then checks curr.start > last.end
         return intervals.length - count;
 
 
+
+INTERVAL LIST INTERSECTIONS
+PROBLEM STATEMENT (Simple words)
+
+Tumhare paas 2 lists of sorted intervals hain.
+
+Example:
+
+A =
+
+[1,3], [5,6], [7,9]
+
+
+B =
+
+[2,3], [5,7]
+
+
+Find all overlapping regions.
+
+Matlab, jahan dono lists ke intervals common time share karte hain.
+
+
+List<int[]> result = new ArrayList<>();
+int i = 0;
+int j = 0;
+int n = firstList.length;
+int m = secondList.length;
+while(i<n && j<m){
+    int start = Math.max(firstList[i][0],secondList[j][0]);
+    int end = Math.min(firstList[i][1],secondList[j][1]);
+
+    if(start<=end){
+        result.add(new int[]{start,end});
+    }
+    if(firstList[i][1]<=secondList[j][1]){
+        i++;
+    }else{
+        j++;
+    }
+}
+
+return result.toArray(new int[result.size()][]);
         
 */
