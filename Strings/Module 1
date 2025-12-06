@@ -1,0 +1,48 @@
+/*
+
+Java me String ek class hai (primitive nahi).
+
+Key points:
+
+String = sequence of characters
+
+Internally stored as char[] (Java 8 tak) / byte[] + encoding (Java 9+)
+
+String immutable hota hai
+
+ aur bhaii log phir hum ye sochte hai string aakhir immutable kyuuu hain 
+
+
+ Immutability ka matlab:
+
+Ek baar String bana diya → uski value change nahi hoti
+Jo bhi “change” lagta hai, actually naya String object banta hai.
+
+String s = "abc";
+s = s + "d"; // "abcd"
+Yaha:
+
+"abc" alag object
+
+"abcd" ek naya object
+
+s ab naya object point kar raha hai
+
+== → reference comparison (same object?)
+
+equals() → value comparison (same content?)
+
+String s1 = "abc";
+String s2 = "abc";
+String s3 = new String("abc");
+
+s1 == s2        // true (same pool object)
+s1 == s3        // false (different objects)
+s1.equals(s3)    //true 
+
+DSA me hmesha equals() use krna hai string k liyeeee.
+
+
+Strings Vs StringBuilder vs 
+
+*/
