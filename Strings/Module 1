@@ -43,6 +43,89 @@ s1.equals(s3)    //true
 DSA me hmesha equals() use krna hai string k liyeeee.
 
 
-Strings Vs StringBuilder vs 
+Strings Vs StringBuilder vs StringBuffer
+
+
+---String
+
+Immutable
+
+Har concat naya object banata hai
+
+Chhote operations ke liye thik hai
+
+---  StringBuilder
+
+Mutable, fast
+
+Single-threaded use ke liye
+
+Loop me concat ke liye use ➜ must
+
+StringBuilder sb = new StringBuilder();
+sb.append("a");
+sb.append("b");   // "ab" in same object
+
+ --- StringBuffer
+
+Same as StringBuilder
+
+But thread-safe (synchronized), isliye slow
+
+Ab zyada use nahi hota in normal code
+
+DSA ke liye:
+ String + kabhi-kabhi StringBuilder kaafi hai.
+
+
+
+ Common useful String methods (jo tum DSA me baar-baar use karoge)
+
+Let’s quickly list:
+
+String s = "Manjeet Mishra";
+
+ Length
+int n = s.length();
+
+ Character access
+char c = s.charAt(0);  // 'M'
+
+Substring
+String sub = s.substring(0, 7); // "Manjeet"
+
+
+substring(i, j) → [i, j) (j exclude hota hai)
+
+ Compare
+s.equals("test");      // true/false
+s.equalsIgnoreCase("manjeet mishra");
+s.compareTo("other");  // lexicographical
+
+ Search
+s.contains("jeet");
+s.indexOf("M");      // first index
+s.lastIndexOf("M");  // last index
+
+ Case change
+s.toLowerCase();
+s.toUpperCase();
+
+ Trim spaces
+s.trim();            // left + right se spaces hata deta
+
+ Split and join
+String[] parts = s.split(" ");
+String joined = String.join("-", parts);
+
+ Replace
+s.replace('e', 'x');
+s.replace("Man", "Code");
+
+ Convert to char array
+char[] arr = s.toCharArray();
+
+
+DSA me useful jab tum in-place modify karna chahte ho.
 
 */
