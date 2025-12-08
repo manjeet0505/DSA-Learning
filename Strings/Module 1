@@ -128,4 +128,12 @@ char[] arr = s.toCharArray();
 
 DSA me useful jab tum in-place modify karna chahte ho.
 
+
+Ques 1 - 
+Reverse a String 
+
+we can use Stringbuilder or just  by suing two pointers method
+
+
+
 */
