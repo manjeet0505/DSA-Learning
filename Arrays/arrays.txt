@@ -1,205 +1,29 @@
-PATTERN 1: Linear Scan / Observation
-
-Ek pass, comparison, tracking
-
-Lec 1 (Easy)
-
-Largest Element in an Array
-
-Second Largest Element in an Array
-
-Check if the array is sorted
-
-Linear Search
-
-Leaders in an Array
-
-Lec 3
-
-Pascal’s Triangle (row generation is linear logic)
-
-👉 Yahan goal:
-single traversal + correct initialization
-
-🔵 PATTERN 2: Two Pointers
-
-Rearrangement, in-place, left/right or slow/fast
-
-Lec 1
-
-Remove duplicates from sorted array
-
-Left rotate array by one place
-
-Left rotate array by D places
-
-Move Zeros to end
-
-Lec 2
-
-Sort array of 0s,1s,2s
-
-Rearrange array in alternating +ve / −ve
-
-Next Permutation
-
-Lec 3
-
-3 Sum
-
-4 Sum
-
-Merge two sorted arrays without extra space
-
-👉 Yahan goal:
-array ko move/rearrange karna bina extra space
-
-🔵 PATTERN 3: Hashing / Frequency Map
-
-Count, lookup, prefix frequency
-
-Lec 1
-
-Find missing number in an array
-
-Find number that appears once (others twice)
-
-Longest subarray with given sum K (positives + negatives)
-
-Lec 2
-
-2 Sum
-
-Majority Element (> n/2)
-
-Longest Consecutive Sequence
-
-Set Matrix Zeroes
-
-Count subarrays with given sum
-
-Lec 3
-
-Majority Element (> n/3)
-
-Largest Subarray with 0 Sum
-
-Count subarrays with given xor K
-
-Find repeating and missing number
-
-👉 Yahan goal:
-brute force → HashMap optimization
-
-🔵 PATTERN 4: Prefix Sum
-
-Cumulative sum, subarray logic
-
-Lec 1
-
-Longest subarray with given sum K (positives)
-
-Lec 2
-
-Count subarrays with given sum
-
-Lec 3
-
-Largest Subarray with 0 Sum
-
-Subarrays with XOR K (prefix xor)
-
-👉 Note:
-Hashing + Prefix Sum almost combo pattern hai
-
-🔵 PATTERN 5: Sliding Window
-
-Fixed / variable window (mostly positives)
-
-Lec 1
-
-Maximum Consecutive Ones
-
-Longest subarray with sum K (positives only)
-
-👉 Yahan rule:
-Negatives aaye → sliding window fail
-
-🔵 PATTERN 6: Kadane / State Tracking
-
-Local vs global best
-
-Lec 2
-
-Kadane’s Algorithm
-
-Print subarray with maximum sum
-
-Stock Buy and Sell
-
-Lec 3
-
-Maximum Product Subarray
-
-👉 Yahan goal:
-“best till now” thinking
-
-🔵 PATTERN 7: Cyclic Sort / Index Mapping
-
-Value → index (1…n)
-
-Lec 1
-
-Find missing number
-
-Lec 3
-
-Find repeating and missing number
-
-🔵 PATTERN 8: Matrix / 2D Arrays
-
-Row-column logic, transform
-
-Lec 2
-
-Set Matrix Zeroes
-
-Rotate Matrix by 90 degrees
-
-Print matrix in spiral manner
-
-🔵 PATTERN 9: Interval / Greedy
-
-Sort + merge
-
-Lec 3
-
-Merge Overlapping Subintervals
-
-🔵 PATTERN 10: Binary Search / Divide & Conquer
-
-Count inversions type logic
-
-Lec 3
-
-Count Inversions
-
-Reverse Pairs
-
-👉 Note:
-Ye merge-sort based problems hain
-(Binary Search + Divide & Conquer)
-
-🔵 PATTERN 11: Sorting-based Logic
-
-Sorting ke baad reasoning
-
-Lec 1
-
-Find the Union
-
-Lec 3
-
-Count Inversions
-
-Reverse Pairs
+ARRAY
+Continuous Memory
+Fixed Size
+Index-Based Access
+O(1) Access Time
+Direct Access fast hota hai
+Traversal linear hota hai
+
+
+
+BASIC ARRAY TRAVERSAL
+Reverse Array
+Time = O(n)
+Space = O(1)
+Check if Array is Sorted and Rotated
+Time = O(n)
+Space = O(1)
+Kth Largest
+Time = O(n log n)
+Due to sorting
+Find Duplicate
+Time = O(n log n)
+Due to sorting
+
+
+
+
+TWO POINTER
+Two pointer technique uses two indices moving towards each other (or forward) to reduce redundant comparisons.
