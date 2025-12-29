@@ -27,3 +27,10 @@ Due to sorting
 
 TWO POINTER
 Two pointer technique uses two indices moving towards each other (or forward) to reduce redundant comparisons.
+
+# Move negatives to one side 
+In this type of problem we can also have asked to move negatives without breaking the order of the elements.
+# Remove duplicates from sorted Array
+# Two Sum 
+# Rearrangement of +ve and -ve alternatively
+
