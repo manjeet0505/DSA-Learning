@@ -34,3 +34,8 @@ In this type of problem we can also have asked to move negatives without breakin
 # Two Sum 
 # Rearrangement of +ve and -ve alternatively
 
+
+
+#Sliding Window
+
+
