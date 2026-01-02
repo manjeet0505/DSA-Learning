@@ -1,0 +1,227 @@
+====================================================
+JAVASCRIPT INTERVIEW NOTES (INTERVIEW READY)
+====================================================
+
+-----------------------
+BASICS
+-----------------------
+
+1. What is JavaScript?
+- High-level, interpreted, dynamically typed language
+- Used to create interactive web applications
+- Works on both frontend (browser) and backend (Node.js)
+
+2. Is JavaScript compiled or interpreted?
+- Interpreted language
+- Modern engines use JIT (Just-In-Time) compilation
+
+3. Is JavaScript single-threaded?
+- Yes, JavaScript is single-threaded
+- Handles async tasks using Event Loop
+
+4. Difference between Java and JavaScript
+- Java: class-based, strongly typed
+- JavaScript: prototype-based, dynamically typed
+
+-----------------------
+VARIABLES & SCOPE
+-----------------------
+
+5. var vs let vs const
+- var: function scoped, hoisted with undefined, can redeclare
+- let: block scoped, hoisted but in TDZ, cannot redeclare
+- const: block scoped, must initialize, no reassignment
+
+6. What is scope?
+- Scope defines where variables are accessible
+- Types: Global, Function, Block
+
+7. Lexical scope
+- Scope depends on where code is written
+- JavaScript follows lexical scoping
+
+8. Temporal Dead Zone (TDZ)
+- Time between declaration and initialization of let/const
+- Accessing variable in TDZ throws error
+
+9. Shadowing
+- Inner variable hides outer variable with same name
+- Allowed with let/const, risky with var
+
+-----------------------
+OPERATORS & TYPES
+-----------------------
+
+10. == vs ===
+- == compares value only (type coercion)
+- === compares value and type
+- Always prefer ===
+
+11. Truthy and Falsy values
+- Falsy: false, 0, "", null, undefined, NaN
+- Truthy: everything else
+
+12. null vs undefined
+- undefined: variable declared but not assigned
+- null: intentional empty value
+
+13. typeof null
+- typeof null returns "object"
+- This is a known JavaScript bug
+
+14. NaN
+- Stands for Not a Number
+- Result of invalid numeric operations
+- NaN !== NaN
+
+-----------------------
+FUNCTIONS
+-----------------------
+
+15. What is a function?
+- Block of reusable code
+- Executes when called
+
+16. Function declaration vs expression
+- Declaration is hoisted
+- Expression is not hoisted
+
+17. Arrow function
+- Shorter syntax
+- Does not have its own this
+
+18. What is this keyword?
+- Refers to current execution context
+- Depends on how function is called
+
+19. Call Stack
+- Tracks function execution order
+- Stack overflow occurs due to deep recursion
+
+-----------------------
+HOISTING & CLOSURE
+-----------------------
+
+20. What is hoisting?
+- Moving declarations to memory phase
+- var initialized as undefined
+- let/const in TDZ
+
+21. What is closure?
+- Inner function remembers outer function variables
+- Exists even after outer function execution
+
+22. Uses of closure
+- Data hiding
+- Private variables
+- Callbacks
+- Currying
+
+-----------------------
+ASYNC JAVASCRIPT
+-----------------------
+
+23. What is asynchronous JavaScript?
+- Code that does not block execution
+- Examples: setTimeout, fetch, promises
+
+24. What is Event Loop?
+- Manages async operations
+- Moves tasks from queue to call stack
+
+25. Callback
+- Function passed as argument to another function
+
+26. Callback Hell
+- Nested callbacks
+- Makes code unreadable
+
+27. Promise
+- Object representing future value
+- States: pending, fulfilled, rejected
+
+28. async / await
+- Cleaner way to handle promises
+- Built on top of promises
+
+-----------------------
+ARRAYS & OBJECTS
+-----------------------
+
+29. Primitive vs Non-Primitive
+- Primitive: stored by value (number, string, boolean)
+- Non-Primitive: stored by reference (array, object)
+
+30. Shallow copy vs Deep copy
+- Shallow: copies reference
+- Deep: creates new independent copy
+
+31. map vs forEach
+- map returns new array
+- forEach does not return anything
+
+32. filter
+- Returns array elements that satisfy condition
+
+33. reduce
+- Reduces array to single value
+
+34. delete operator
+- Used to delete object properties
+
+-----------------------
+PROTOTYPE & INHERITANCE
+-----------------------
+
+35. Prototype
+- Mechanism for sharing properties between objects
+- Used for inheritance
+
+36. Prototype chain
+- JavaScript searches property in object then prototype chain
+
+37. Does JavaScript support inheritance?
+- Yes, via prototype-based inheritance
+
+-----------------------
+MISC INTERVIEW QUESTIONS
+-----------------------
+
+38. Is JavaScript case-sensitive?
+- Yes
+
+39. What is garbage collection?
+- Automatic memory management in JavaScript
+
+40. Can closures cause memory leaks?
+- Yes, if unused references are retained
+
+41. What are template literals?
+- Strings using backticks with ${} interpolation
+
+42. Higher-order function
+- Function that takes or returns another function
+
+43. setTimeout vs setInterval
+- setTimeout runs once
+- setInterval runs repeatedly
+
+44. Can we stop setInterval?
+- Yes, using clearInterval
+
+45. What is strict mode?
+- Enforces stricter parsing and error handling
+
+-----------------------
+INTERVIEW GOLDEN RULES
+-----------------------
+
+- Prefer const over let
+- Avoid var
+- Use === instead of ==
+- Understand examples, not definitions
+- Explain with confidence, not speed
+
+====================================================
+END OF JAVASCRIPT INTERVIEW NOTES
+====================================================
