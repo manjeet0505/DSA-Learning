@@ -1,0 +1,97 @@
+# Kadane’s Algorithm — Exact Scope 
+
+This document clearly defines **what Kadane’s Algorithm covers and what it does NOT**.  
+Use this to avoid pattern confusion in interviews and practice.
+
+---
+##  Kadane Covers ONLY These (Non-DP Zone)
+
+### 1️⃣ Maximum Subarray Sum
+**Classic Kadane Problem**
+
+- Goal: Find the maximum sum of a contiguous subarray.
+- Core formula:
+
+currentSum = max(arr[i], currentSum + arr[i])
+
+
+- Intuition:
+  - Either start fresh from current element
+  - Or extend the previous subarray
+- Time: O(n)
+- Space: O(1)
+
+---
+
+### 2️⃣ All Negative Array Case
+- Edge case of Kadane
+- When all elements are negative:
+  - The answer is the **largest (least negative) element**
+- Important interview check
+
+---
+
+### 3️⃣ Maximum Product Subarray
+**Modified Kadane**
+
+- Trick:
+  - Maintain both `maxProduct` and `minProduct`
+  - Because negative × negative = positive
+- Still a Kadane-family problem (not DP)
+
+---
+
+### 4️⃣ Buy & Sell Stock (Kadane Mindset)
+
+####  Single Transaction
+- Equivalent to Kadane on price differences
+- Idea:
+  - Drop bad prefix (loss)
+  - Keep maximum profit
+
+####  Multiple Transactions
+- Greedy extension of Kadane thinking
+- Still **NOT DP**
+
+ These stock problems belong to the **Kadane family**
+
+---
+
+##  What is NOT Kadane (IMPORTANT)
+
+These are **Dynamic Programming problems**, not Kadane:
+
+- Buy & Sell Stock with cooldown
+- Buy & Sell Stock with transaction fee
+- Buy & Sell Stock with at most K transactions
+- Maximum Circular Subarray  
+  (Kadane + extra trick, advanced variant)
+
+ Avoid mixing these with Kadane during interviews.
+
+---
+
+##  From Interviewer’s Perspective
+
+If the interviewer asks:
+
+> “Explain Kadane’s Algorithm”
+
+They expect you to cover:
+
+- Maximum Subarray Sum
+- Negative prefix drop intuition
+- Edge case: all negative numbers
+- (Bonus) Maximum Product Subarray
+
+ Anything beyond this is **extra**, not mandatory.
+
+---
+
+##  Final Takeaway
+
+- Kadane = **Greedy, linear scan**
+- Kadane ≠ DP
+- If state transitions or multiple decisions exist → it’s DP, not Kadane
+
+LOCK this scope and move forward with confidence 
