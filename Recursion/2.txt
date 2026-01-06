@@ -1,0 +1,99 @@
+PARAMETERIZED vs FUNCTIONAL RECURSION
+1️ PARAMETERIZED RECURSION
+🔹 Definition
+
+Is type me answer parameters ke through carry hota hai.
+Function ka return value important nahi hota, kaam parameters kar dete hain.
+
+ “Data upar se neeche pass hota hai”
+
+ Template (Mindset)
+f(n, ans){
+    if(base case) {
+        print/store ans
+        return;
+    }
+    f(n-1, ans + something);
+}
+
+ Example (Sum of N numbers)
+f(n, sum){
+    if(n == 0){
+        print(sum);
+        return;
+    }
+    f(n-1, sum + n);
+}
+
+ Key Characteristics
+
+Extra parameter hota hai (accumulator)
+
+Mostly tail recursion
+
+Loop me convert karna easy
+
+Memory efficient (conceptually)
+
+ Typical Problems (MUST DO)
+
+Sum of first N numbers
+
+Factorial (parameterized)
+
+Print 1 to N / N to 1
+
+Array traversal
+
+Reverse array using index + result
+
+ Interview Line 💡
+
+“Parameterized recursion uses parameters to accumulate the result instead of returning it.”
+
+2️ FUNCTIONAL RECURSION
+ Definition
+
+Isme function value return karta hai, aur wahi value upar jaakar combine hoti hai.
+
+“Data neeche se upar aata hai”
+
+ Template (Mindset)
+f(n){
+    if(base case) return baseValue;
+    return something + f(n-1);
+}
+
+ Example (Sum of N numbers)
+f(n){
+    if(n == 0) return 0;
+    return n + f(n-1);
+}
+
+ Key Characteristics
+
+No extra parameter
+
+Clean & mathematical
+
+Stack frame important
+
+DP ke liye base banti hai
+
+ Typical Problems (MUST DO)
+
+Factorial
+
+Fibonacci
+
+Power (xⁿ)
+
+Check palindrome
+
+Find max/min in array
+
+Count paths / ways
+
+ Interview Line 
+
+“Functional recursion builds the solution while returning from recursive calls.”
