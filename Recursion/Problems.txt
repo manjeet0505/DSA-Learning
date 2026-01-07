@@ -1,0 +1,10 @@
+## Reverse an array using recursion
+public static void reverseArray(int[] arr, int l, int r) {
+    if (l >= r) return;
+
+    int temp = arr[l];
+    arr[l] = arr[r];
+    arr[r] = temp;
+
+    reverseArray(arr, l + 1, r - 1);
+}
