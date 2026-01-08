@@ -1,0 +1,21 @@
+public class PrintSubsequences {
+
+    static void printSubsequence(int index, String str, String curr) {
+        // Base case
+        if (index == str.length()) {
+            System.out.println(curr);
+            return;
+        }
+
+        // Include current character
+        printSubsequence(index + 1, str, curr + str.charAt(index));
+
+        // Exclude current character
+        printSubsequence(index + 1, str, curr);
+    }
+
+    public static void main(String[] args) {
+        String str = "abc";
+        printSubsequence(0, str, "");
+    }
+}

@@ -47,7 +47,7 @@ Array traversal
 
 Reverse array using index + result
 
- Interview Line 💡
+ Interview Line 
 
 “Parameterized recursion uses parameters to accumulate the result instead of returning it.”
 

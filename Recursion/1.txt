@@ -2,16 +2,16 @@
 aur khud pe bharosa rakhna ki chhota problem solve ho jaayega.
 
 RECURSION KE 3 PILLARS 
-1️⃣ Base Case
+1️. Base Case
 
  Kab rukna hai
 Agar base case nahi → infinite recursion 
 
-2️⃣ Recursive Call
+2️. Recursive Call
 
  Chhota problem kaun sa hai
 
-3️⃣ Work (Before / After Call)
+3️. Work (Before / After Call)
 
  Call se pehle ya baad kya kaam ho raha hai
 

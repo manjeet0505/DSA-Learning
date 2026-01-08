@@ -8,3 +8,12 @@ public static void reverseArray(int[] arr, int l, int r) {
 
     reverseArray(arr, l + 1, r - 1);
 }
+
+fibonacci
+// Recursive Fibonacci
+public static int fibonacci(int n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+In screenshot recursion is being drawn for fibonacci for n = 4;
