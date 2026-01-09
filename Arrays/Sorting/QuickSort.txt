@@ -1,0 +1,28 @@
+Idea:
+Ek element ko pivot choose karo 
+uske left me smaller elements,
+uske right me greater elements ,
+phir left & right ko recursively sort karo.
+
+ Divide = partition (not by mid like merge sort)
+ No extra array (in-place)
+
+
+ Partition Methods (Very Important)
+1️. Lomuto Partition (Easy – Start Here)
+
+Pivot = last element
+
+Easy to understand
+
+Slightly slower
+
+2️. Hoare Partition (Optimized)
+
+Pivot = first element
+
+Fewer swaps
+
+Used in interviews
+
+ We’ll start with Lomuto - 
