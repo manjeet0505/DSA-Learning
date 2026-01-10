@@ -26,3 +26,108 @@ Fewer swaps
 Used in interviews
 
  We’ll start with Lomuto - 
+Pivot
+
+We choose last element as pivot (Lomuto method)
+
+Goal
+
+All elements ≤ pivot → left
+
+All elements > pivot → right
+
+Pivot goes to its final sorted position
+
+class Solution {
+
+    public int[] sortArray(int[] nums) {
+        quickSort(nums, 0, nums.length - 1);
+        return nums;
+    }
+
+    void quickSort(int[] nums, int low, int high) {
+        if (low >= high) return;
+
+        int pIndex = partition(nums, low, high);
+
+        quickSort(nums, low, pIndex - 1);
+        quickSort(nums, pIndex + 1, high);
+    }
+
+    int partition(int[] nums, int low, int high) {
+        int pivot = nums[high];
+        int i = low - 1;
+
+        for (int j = low; j < high; j++) {
+            if (nums[j] <= pivot) {
+                i++;
+                swap(nums, i, j);
+            }
+        }
+
+        swap(nums, i + 1, high);
+        return i + 1;
+    }
+
+    void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+}
+
+
+
+HOARE - 
+Hoare Partition – Core Idea
+
+Pivot = first element
+Left pointer → right move karega
+Right pointer → left move karega
+Jab galat side ke elements milen → swap
+Jab pointers cross ho jaayen → partition done
+
+class Solution {
+
+    public int[] sortArray(int[] nums) {
+        quickSort(nums, 0, nums.length - 1);
+        return nums;
+    }
+
+    void quickSort(int[] nums, int low, int high) {
+        if (low >= high) return;
+
+        int pIndex = hoarePartition(nums, low, high);
+
+        quickSort(nums, low, pIndex);
+        quickSort(nums, pIndex + 1, high);
+    }
+
+    int hoarePartition(int[] nums, int low, int high) {
+        int pivot = nums[low];
+        int i = low - 1;
+        int j = high + 1;
+
+        while (true) {
+
+            do {
+                i++;
+            } while (nums[i] < pivot);
+
+            do {
+                j--;
+            } while (nums[j] > pivot);
+
+            if (i >= j)
+                return j;
+
+            swap(nums, i, j);
+        }
+    }
+
+    void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+}
