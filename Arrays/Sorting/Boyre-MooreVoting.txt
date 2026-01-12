@@ -1,0 +1,24 @@
+Q5: Majority Element (> n/2 times)
+
+Boyer–Moore Voting Algorithm 
+
+BEST & INTERVIEW FAVOURITE
+
+Time: O(n)
+
+Space: O(1)
+
+ BOYER–MOORE: CORE INTUITION 
+
+Majority element baaki sab elements ko “cancel out” kar deta hai.
+
+Socho jaise votes:
+
+Same element mile → +1 vote
+
+Different mile → -1 vote
+
+Vote 0 ho jaaye → naya candidate choose
+
+Agar koi element n/2 se zyada hai,
+toh end me wahi bachega.
