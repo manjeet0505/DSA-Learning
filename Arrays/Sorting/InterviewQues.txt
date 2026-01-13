@@ -1,0 +1,43 @@
+Q1. [3,1,2,4]
+ Answer: 2
+Why: Cycle (0→2→1→0) size 3 → 3−1 = 2 swaps
+
+Q2. Minimum difference between any two elements
+ Answer: Yes, sorting needed
+Why: Sorted array me minimum difference adjacent elements ke beech hota hai
+
+Q3. Array of 0,1,2
+ Answer: Dutch National Flag (DNF)
+Pointers: low (0s), mid (current), high (2s)
+
+Q4. Merge two sorted arrays without extra space
+ Answer: GAP method
+Time: O((n+m) log(n+m))
+
+Q5. 3rd smallest where k << n
+ Answer: Max Heap of size k
+Why: O(n log k) better than full sort O(n log n)
+
+Q6. [2,2,1,1,1,2,2]
+ Answer: Boyer–Moore Voting Algorithm
+Idea: Majority element cancels all others
+
+Q7. In inversion count, when left[i] > right[j]
+ Answer: left_size − i inversions added
+
+Q8. Duplicates in range 1..n, O(1) space
+ Answer: Index marking / sign flip trick
+Idea: Visit index = value−1, mark negative
+
+Q9. Relative sorting of two arrays
+ Answer (3 steps):
+
+Frequency map of arr1
+
+Place elements in arr2 order
+
+Sort & append remaining elements
+
+Q10. Only min & max required
+ Answer: Single traversal
+Why: Sorting is unnecessary overhead
