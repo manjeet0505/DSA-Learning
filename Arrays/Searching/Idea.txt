@@ -1,0 +1,25 @@
+Binary search tab kaam karta hai jab:
+
+Data sorted ho OR
+
+Answer space monotonic ho (false → true ya true → false)
+
+###Sorted array sirf one special case hai.
+
+BINARY SEARCH
+│
+├── Classic (on array)
+│   ├── Element exists?
+│   ├── First / Last occurrence
+│   ├── Count occurrences
+│
+├── Modified (conditions)
+│   ├── Rotated sorted array
+│   ├── Nearly sorted array
+│   ├── Peak element
+│
+└── Binary Search on Answer 
+    ├── Square root
+    ├── Min max pages
+    ├── Aggressive cows
+    ├── Koko eating bananas
