@@ -1,7 +1,10 @@
-public List<List<Integer>> minimumAbsDifference(int[] arr) {
+Minimum Absolute difference
+
+class Solution {
+    public List<List<Integer>> minimumAbsDifference(int[] arr) {
         Arrays.sort(arr);
-        List<List<Integer>> result = new ArrayList<>();
         int mindiff = Integer.MAX_VALUE;
+        List<List<Integer>> result = new ArrayList<>();
         for(int i=1;i<arr.length;i++){
             int diff = arr[i] - arr[i-1];
             mindiff = Math.min(mindiff,diff);
@@ -14,9 +17,4 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
         }
         return result;
     }
-
-
-    In this problem we need to calculate the mindiff between each and every pair and then we need to collect the pairs in ascending order .
-
-
-    
+}
