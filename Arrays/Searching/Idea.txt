@@ -41,3 +41,10 @@ mid = 7 → mil gaya
 
 Important:
 Binary search comparison nahi, decision hai.
+
+MOST COMMON  TRAPS (FOUNDATION) :
+
+ low <= high vs low < high confuse
+ mid calculation overflow
+ Answer milne ke baad bhi loop chala dena
+ Sorted assumption bina check
