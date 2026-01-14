@@ -23,3 +23,21 @@ BINARY SEARCH
     ├── Min max pages
     ├── Aggressive cows
     ├── Koko eating bananas
+
+
+## CLASSIC BINARY SEARCH (BASE LAYER)
+### Core intuition
+
+Har step pe decide karo:
+“Answer left half me hai ya right half me?”
+
+Example
+arr = [1,3,5,7,9], target = 7
+
+
+mid = 5 → chhota → right
+
+mid = 7 → mil gaya 
+
+Important:
+Binary search comparison nahi, decision hai.
