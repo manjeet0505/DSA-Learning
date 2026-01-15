@@ -1,0 +1,126 @@
+PROBLEM: Search in a Nearly Sorted Array
+
+
+CORE IDEA (VERY IMPORTANT)
+
+At every step:
+1️. Check mid
+2️. Check mid - 1
+3️. Check mid + 1
+
+Agar teeno me nahi mila →
+safe to discard half of the array, but carefully.
+
+ DECISION RULE (MOST CRITICAL)
+
+If target not found in:
+
+mid, mid-1, mid+1
+
+
+Then:
+
+If target < arr[mid] → go LEFT, but:
+
+high = mid - 2
+
+
+Else → go RIGHT, but:
+
+low = mid + 2
+
+
+ Kyunki mid±1 already checked.
+
+ DEEP DRY RUN (STEP-BY-STEP)
+Example
+arr = [10, 3, 40, 20, 50, 80, 70]
+target = 40
+
+Step 1
+low = 0, high = 6
+mid = 3 → arr[3] = 20
+
+
+Check:
+
+mid → 20 
+
+mid-1 → 40  FOUND
+
+Answer index = 2
+
+Another Dry Run (Target not immediate)
+arr = [10, 3, 40, 20, 50, 80, 70]
+target = 70
+
+Step 1
+low=0, high=6
+mid=3 → 20
+Check 20, 40, 50 → not 70
+target > arr[mid]
+→ low = mid + 2 = 5
+
+Step 2
+low=5, high=6
+mid=5 → 80
+Check 80, 50, 70 → FOUND at index 6
+
+ WHY mid±1 CHECK IS ENOUGH?
+
+Because:
+
+Element displacement max 1 allowed
+
+So correct position cannot be further away
+
+
+ EDGE CASES (INTERVIEW FAVOURITES)
+
+1️. mid = 0
+
+mid - 1 invalid → skip safely
+
+2️. mid = n-1
+
+mid + 1 invalid → skip
+
+3️. Array size = 1
+
+Direct check
+
+4️. Target at boundary
+
+Always check mid±1 with bounds
+
+
+
+class Solution {
+    public int searchNearlySorted(int[] arr, int target) {
+        int low = 0, high = arr.length - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            // check mid
+            if (arr[mid] == target)
+                return mid;
+
+            // check mid - 1
+            if (mid - 1 >= low && arr[mid - 1] == target)
+                return mid - 1;
+
+            // check mid + 1
+            if (mid + 1 <= high && arr[mid + 1] == target)
+                return mid + 1;
+
+            // move search space
+            if (target < arr[mid]) {
+                high = mid - 2;
+            } else {
+                low = mid + 2;
+            }
+        }
+        return -1;
+    }
+}
