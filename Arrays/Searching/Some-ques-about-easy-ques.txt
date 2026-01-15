@@ -1,0 +1,34 @@
+1️. First vs Last occurrence me direction kya change hota hai?
+
+First occurrence → high = mid - 1 (LEFT jaate hain)
+
+Last occurrence → low = mid + 1 (RIGHT jaate hain)
+
+ Reason:
+Answer milne ke baad bhi better index dhoondhna hota hai
+
+first = aur left me?
+
+last = aur right me?
+
+ 2️. Floor / Ceil me candidate kyun store karte hain?
+
+ Kyunki exact match milna guaranteed nahi hota.
+
+Jab arr[mid] ≤ x → possible floor
+
+Jab arr[mid] ≥ x → possible ceil
+
+ Candidate store isliye:
+
+Search aage badhte waqt best valid answer lose na ho.
+
+3️. Count occurrences ka formula?
+count = lastIndex − firstIndex + 1
+
+
+ Agar element present nahi:
+
+first / last = invalid
+
+count = 0
