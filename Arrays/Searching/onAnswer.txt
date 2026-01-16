@@ -1,0 +1,29 @@
+Normal BS vs BS on Answer
+
+Normal BS: array me search (sorted data)
+
+BS on Answer: array pe nahi, possible answers ke range pe search
+
+ Golden line (interview-ready):
+
+“When the answer space is monotonic and we can validate a guess, we binary search the answer.”
+
+1 . Sqrt(x)
+
+  sqrt(n) ∈ [0, n]
+  
+class Solution {
+    public int mySqrt(int x) {
+        int low = 0;
+        int high = x;
+        while(low<=high){
+            int mid = low + (high - low ) / 2;
+            if((long) mid * mid <= x){
+                low = mid + 1;
+            }else{
+                high = mid - 1;
+            }
+        }
+        return high;
+    }
+}
