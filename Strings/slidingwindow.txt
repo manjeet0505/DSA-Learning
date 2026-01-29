@@ -58,3 +58,102 @@ Khud se pooch:
         return maxlen;
     }
 
+Hmari is sliding window of string ki journey ka agla pdav ya ques hai 
+ LONGEST REPEATING CHARACTER REPLACEMENT
+
+ Ek string di hai aur ek number k.
+Tum max k characters replace kar sakte ho
+taaki window ke andar sab characters same ho jaayein.
+
+s = "AABABBA", k = 1
+
+l = 0
+freq = {}
+maxFreq = 0
+maxLen = 0
+
+r = 0 → 'A'
+freq[A] = 1
+maxFreq = 1
+window = "A"
+replacements = 1 - 1 = 0 <= k ✔
+maxLen = 1
+
+
+r = 1 → 'A'
+freq[A] = 2
+maxFreq = 2
+window = "AA"
+replacements = 2 - 2 = 0 ✔
+maxLen = 2
+
+
+r = 2 → 'B'
+freq[B] = 1
+maxFreq = 2
+window = "AAB"
+replacements = 3 - 2 = 1 <= k ✔
+maxLen = 3
+
+
+r = 3 → 'A'
+freq[A] = 3
+maxFreq = 3
+window = "AABA"
+replacements = 4 - 3 = 1 <= k ✔
+maxLen = 4
+
+
+r = 4 → 'B'
+freq[B] = 2
+window = "AABAB"
+replacements = 5 - 3 = 2  (>k)
+ Invalid → shrink
+
+Move l:
+
+remove 'A'
+freq[A] = 2
+l = 1
+Now:
+
+window_size = 4
+replacements = 4 - 2 = 2 
+Shrink again:
+
+remove 'A'
+freq[A] = 1
+l = 2
+Now:
+
+window = "BAB"
+window_size = 3
+replacements = 3 - 2 = 1 
+Continue sliding…
+
+Final:
+
+maxLen = 4
+
+
+ int[] freq = new int[256];
+        int left = 0;
+        int right = 0;
+        int maxfreq = 0;
+        int maxlen = 0;
+
+        while(right<s.length()){
+            char c = s.charAt(right);
+
+            freq[c - 'A']++;
+            maxfreq = Math.max(maxfreq , freq[c - 'A']);
+
+            while((right - left + 1) - maxfreq > k){
+                freq[s.charAt(left) - 'A']--;
+                left++;
+            }
+            maxlen = Math.max(maxlen , right - left + 1);
+            right++;
+        }
+        return maxlen;
+
