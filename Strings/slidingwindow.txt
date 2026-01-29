@@ -1,0 +1,60 @@
+Toh ab hum string related sliding window ke pattern ke question krenge lets start in this text file 
+
+
+
+SLIDING WINDOW = BASIC THINKING
+
+Khud se pooch:
+1️. Kya question substring ke baare me hai?
+2️. Kya longest / smallest / max / min poocha gaya hai?
+3️. Kya window ko aage badha ke answer mil sakta hai?
+
+ Haan = Sliding Window
+
+ LONGEST SUBSTRING WITHOUT REPEATING CHARACTERS
+
+ Ab ye problem ka sol jb maine likha toh ye tha 
+
+    public int lengthOfLongestSubstring(String s) {
+        Set<Character> set = new HashSet<>();
+
+        int l = 0;
+        int r = 0;
+        int maxlen = 0;
+        while(r<s.length()){
+            char c = s.charAt(r);
+
+            if(set.contains(c)){
+                set.remove(s.charAt(l));
+                l++;
+            }
+            set.add(c);
+            maxlen = Math.max(maxlen , r - l + 1);
+            r++;
+        }
+        return maxlen;
+    }
+
+
+    but when we apply it isme ek aadha case (testcase ) fail hoga hi hoga toh phir dikkt ye hai ki "if" lagane ki wjh se wo ek baar hi dekh rha hai duplicate but kbhi kbhi wo bahottt baar repeat ho rhe hai toh hume iska dhyan rkhna then ye code hi same "while" lagake run kiya and then done all testcases are passed.
+
+    public int lengthOfLongestSubstring(String s) {
+        Set<Character> set = new HashSet<>();
+
+        int l = 0;
+        int r = 0;
+        int maxlen = 0;
+        while(r<s.length()){
+            char c = s.charAt(r);
+
+            while(set.contains(c)){
+                set.remove(s.charAt(l));
+                l++;
+            }
+            set.add(c);
+            maxlen = Math.max(maxlen , r - l + 1);
+            r++;
+        }
+        return maxlen;
+    }
+
