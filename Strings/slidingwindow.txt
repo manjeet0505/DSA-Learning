@@ -1,7 +1,6 @@
 Toh ab hum string related sliding window ke pattern ke question krenge lets start in this text file 
 
 
-
 SLIDING WINDOW = BASIC THINKING
 
 Khud se pooch:
@@ -157,3 +156,36 @@ maxLen = 4
         }
         return maxlen;
 
+now we move on to the next problem to the permutation in string 
+
+Agar s1 length = k
+to s2 me har window of size k check karo
+ki kya uski frequency s1 ke barabar hai.
+
+    public boolean checkInclusion(String s1, String s2) {
+        if(s1.length() > s2.length()) return false;
+        
+        int[] freq = new int[256];
+        int[] freq2 = new int[256];
+        for(char c: s1.toCharArray()){
+            freq[c - 'a']++;
+        }
+        int left = 0;
+        int right = 0;
+        int k = s1.length();
+
+        while(right < s2.length()){
+            freq2[s2.charAt(right) - 'a']++;
+
+            if(right - left + 1 > k){
+                freq2[s2.charAt(left) - 'a']--;
+                left++;
+            }
+
+            if(right - left + 1 == k && Arrays.equals(freq,freq2)){
+                return true;
+            }
+            right++;
+        }
+        return false;
+    }
