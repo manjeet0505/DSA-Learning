@@ -1,0 +1,26 @@
+Longest Substring with AT MOST K Distinct Characters
+
+Window me distinct characters ≤ k hone chahiye.
+Jaise hi distinct k se zyada ho jaaye → left se shrink.
+
+if(k==0) return 0;
+int[] freq = new int[256];
+int left = 0;
+int right = 0;
+int maxlen = 0;
+int distinct = 0;
+while(right<s.length()){
+    char c = s.charAt(right);
+    if(freq[c==0]) distinct++;
+    freq[c]++;
+    right++;
+
+    if(distinct>k){
+        char leftchar = s.charAt(left);
+        freq[leftchar]--;
+        if(freq[leftchar]==0) distinct--;
+        left++;
+    }
+    maxlen = Math.max(maxlen , right - left + 1);
+}
+return maxlen;
