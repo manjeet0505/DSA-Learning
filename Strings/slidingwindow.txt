@@ -189,3 +189,41 @@ ki kya uski frequency s1 ke barabar hai.
         }
         return false;
     }
+
+Minimum Window Substring 
+
+
+    public String minWindow(String s, String t) {
+        if(s.length() < t.length()) return "";
+
+        int[] need = new int[128];
+        for(char c: t.toCharArray()){
+            need[c]++;
+        }
+       int left = 0;
+       int right = 0;
+       int minlen = Integer.MAX_VALUE;
+       int start = 0;
+       int required = t.length();
+
+       while(right<s.length()){
+        char c = s.charAt(right);
+         
+         if(need[c] > 0) required--;
+         need[c]--;
+         right++;
+
+         while(required==0){
+        if(right - left < minlen){
+            minlen = right - left;
+            start = left;
+        }
+
+        char leftchar = s.charAt(left);
+        need[leftchar]++;
+        if(need[leftchar] > 0) required++;
+        left++;
+         }
+       }
+       return minlen == Integer.MAX_VALUE ? "" : s.substring(start, start + minlen);
+    }
