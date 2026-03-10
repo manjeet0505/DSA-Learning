@@ -13,3 +13,16 @@ Delete Nth node from end
 Delete node without head pointer
 
 These are foundation pointer operations.
+
+Basics / Pointer Control
+
+Linked List structure (Node, head, next)
+
+Traversal of linked list
+
+Insert node at position
+
+Delete node by value
+
+Delete Nth node from end
+
