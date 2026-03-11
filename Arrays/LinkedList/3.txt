@@ -1,0 +1,46 @@
+function printList(head) {
+  let curr = head;
+  while (curr !== null) {
+    console.log(curr.val);
+    curr = curr.next;  // move forward
+  }
+}
+
+
+Simple. But internalize this loop  - *every LL problem uses this skeleton.*
+
+
+
+# Core Operation 2 — Reversal (most important)
+
+This is the base of 6+ problems. Learn it cold.
+
+*Step by step with [1→2→3→4→null]:*
+
+Start:   prev=null, curr=1
+
+Step 1:
+  next = curr.next = 2    // save 2
+  curr.next = prev = null // 1 → null (flipped!)
+  prev = curr = 1         // prev moves to 1
+  curr = next = 2         // curr moves to 2
+
+Step 2:
+  next = curr.next = 3
+  curr.next = prev = 1    // 2 → 1
+  prev = 2
+  curr = 3
+
+Step 3:
+  next = 4
+  curr.next = 2           // 3 → 2
+  prev = 3
+  curr = 4
+
+Step 4:
+  next = null
+  curr.next = 3           // 4 → 3
+  prev = 4
+  curr = null             // loop ends
+
+return prev = 4  
