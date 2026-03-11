@@ -1,0 +1,42 @@
+ Pattern 1 — Pointer Basics (The Foundation of Everything)
+Theory
+A linked list node is just this:
+jsclass Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+
+That's it. No indexes. No direct access. You can only move **forward** using `.next`.
+
+This is why pointers feel hard — you're used to arr[i] jumping anywhere. In LL, you walk step by step.
+
+
+## The #1 Rule
+
+> **Before you reassign any `.next` — save what you'll lose.**
+
+This single rule fixes 90% of pointer bugs. Let's internalize it.
+
+
+
+## Visualization — What "losing" a pointer means
+
+head → [1] → [2] → [3] → null
+
+// You want to delete node [2]
+// Naive attempt:
+head.next.next = null   // [1] → null
+
+// You just lost [2] AND [3] forever 
+// Nothing points to them anymore
+
+
+Correct way:
+
+// Save what you need FIRST
+let toDelete = head.next;        // save [2]
+head.next = head.next.next;      // [1] → [3]
+toDelete.next = null;            // cleanly cut [2]
