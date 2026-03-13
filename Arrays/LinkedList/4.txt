@@ -1,0 +1,115 @@
+Page 1
+Copy code
+
+1 -> 2 -> 3 -> null
+
+curr = head;
+prev = null;
+
+next = curr.next;
+prev = curr;
+curr = next;
+
+3 <- 2 <- 1 -> null
+next = 3
+
+Class Node {
+    Constructor(val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+
+2 -> 1 -> null
+prev = 1
+curr = 2
+Pattern 1
+Pointer Basics
+Always save next or you'll lose the node and point to null.
+Pattern 2
+Gap Trick
+Remove nth from end of list
+Use of two pointers
+slow = one step
+fast = k steps
+Pattern 3
+Slow & Fast Pointers
+Page 2
+Copy code
+
+Two pointers move at different speeds
+
+slow = one step
+fast = two steps
+
+Therefore slow gets to middle when fast hits null
+i.e stopping condition
+Floyd's Algorithm
+We need to detect cycle only
+Copy code
+
+if (slow == fast)
+    return true
+Floyd’s 2 – Finding Start of Cycle
+Copy code
+
+slow = L (head)
+fast = X (cycle -> meeting)
+
+Total = L + X -> slow
+2(L + X) -> fast
+Conclusion:
+Copy code
+
+fast resets to head
+Pattern 3
+Recursion
+Copy code
+
+int solve(ListNode head) {
+
+    if(head == null)
+        return baseValue;
+
+}
+Page 3
+Copy code
+
+if(head.next == null)
+    return someValue;
+
+Step 2
+int subresult = solve(head.next);
+
+Step 3
+Combine
+
+Step 4
+return result
+Merge List
+Copy code
+
+In this first we need to find the
+smaller node from both of the list
+Copy code
+
+if (l1.data < l2.data) {
+
+    curr.next = merge --
+
+}
+else
+Palindrome Linked List
+Copy code
+
+write findMiddle(Node head)
+write reverseList(Node head)
+
+boolean isPalindrome
+Example:
+Copy code
+
+1 -> 2 -> 2 -> 1
+Copy code
+
+1 -> 2 -> 1 -> 2  ✓
